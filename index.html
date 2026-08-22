@@ -43,6 +43,11 @@
     </style>
     <link rel="stylesheet" href="assets/main.css">
     <style>html { filter: grayscale(100%); }</style>
+
+    <style>
+        #keyInput { color: #ffffff !important; -webkit-text-fill-color: #ffffff !important; caret-color: #ffffff !important; background: #1c1c1c !important; }
+        #keyInput::placeholder { color: #bdbdbd !important; opacity: 1 !important; }
+    </style>
 </head>
 <body>
     
@@ -68,10 +73,10 @@
                     </div>
                     <div class="login-container">
                         <div class="input-group">
-                            <input type="text" id="keyInput" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" class="login-input" placeholder="DIGITE SUA KEY" data-manus_clickable="true" data-manus_click_id="3">
+                            <input type="text" id="keyInput" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="text" class="login-input" placeholder="DIGITE SUA KEY" data-manus_clickable="true" data-manus_click_id="3">
                             <div id="errorMsg" class="error-msg">KEY INCORRETA!</div>
                         </div>
-                   <button class="btn-login" onclick="window.validateLogin()" data-manus_clickable="true" data-manus_click_id="4">ENTRAR</button>
+                   <button class="btn-login" onclick="window.validateLogin(); return false;" data-manus_clickable="true" data-manus_click_id="4">ENTRAR</button>
                 </div>
             </div>
             <div id="panel-view">
@@ -154,4 +159,25 @@
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;c6a3fe4e9a6a40c08cb265ffe20be57a&quot;,&quot;r&quot;:1}" crossorigin="anonymous"></script>
 
 
+
+    <script>
+        window.validateLogin = function () {
+            const input = document.getElementById('keyInput');
+            const error = document.getElementById('errorMsg');
+            const login = document.getElementById('login-view');
+            const panel = document.getElementById('panel-view');
+            const value = (input && input.value ? input.value : '').trim().toLowerCase();
+            if (value === 'bypass') {
+                if (login) login.style.display = 'none';
+                if (panel) panel.classList.add('active');
+                if (error) error.style.display = 'none';
+            } else if (error) {
+                error.style.display = 'block';
+                window.setTimeout(() => { error.style.display = 'none'; }, 3000);
+            }
+        };
+        document.getElementById('keyInput')?.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') { window.validateLogin(); }
+        });
+    </script>
 </body></html>
