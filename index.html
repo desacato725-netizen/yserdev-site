@@ -42,6 +42,7 @@
         .hz-value-display { color: var(--system-green); font-weight: bold; font-family: monospace; text-shadow: 0 0 5px var(--system-green); }
     </style>
     <link rel="stylesheet" href="assets/main.css">
+    <style>html { filter: grayscale(100%); }</style>
 </head>
 <body>
     
@@ -67,7 +68,7 @@
                     </div>
                     <div class="login-container">
                         <div class="input-group">
-                            <input type="text" id="keyInput" autocomplete="off" class="login-input" placeholder="DIGITE SUA KEY" data-manus_clickable="true" data-manus_click_id="3">
+                            <input type="text" id="keyInput" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" class="login-input" placeholder="DIGITE SUA KEY" data-manus_clickable="true" data-manus_click_id="3">
                             <div id="errorMsg" class="error-msg">KEY INCORRETA!</div>
                         </div>
                    <button class="btn-login" onclick="window.validateLogin()" data-manus_clickable="true" data-manus_click_id="4">ENTRAR</button>
