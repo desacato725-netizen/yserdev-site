@@ -4,22 +4,22 @@
     <title>Shein</title>
     <meta name="description" content="sleep sensi melhor loja de x1ts e auxilios.">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#8A2BE2">
+    <meta name="theme-color" content="#808080">
     <link rel="apple-touch-icon" href="icons/icon.png">
     <style>
         /* Estilos de Camuflagem */
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; font-family: sans-serif; overflow: hidden; }
         #game-loader { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; color: white; text-align: center; }
-        .spinner { width: 50px; height: 50px; border: 5px solid rgba(255,255,255,0.1); border-top-color: #8A2BE2; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px; }
+        .spinner { width: 50px; height: 50px; border: 5px solid rgba(255,255,255,0.1); border-top-color: #808080; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px; }
         @keyframes spin { to { transform: rotate(360deg); } }
         
         /* O painel real começa escondido */
         #real-content { display: none; }
         
         /* CSS do Painel (embutido para evitar requisições extras detectáveis) */
-        :root { --primary-color: #8A2BE2; --primary-dark: #1a0033; --primary-light: #BF00FF; --bg-color: #05000a; --text-color: #ffffff; --system-green: #BF00FF; }
+        :root { --primary-color: #808080; --primary-dark: #111111; --primary-light: #f0f0f0; --bg-color: #000000; --text-color: #ffffff; --system-green: #f0f0f0; }
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        #viewport-wrapper { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #05000a 0%, #1a0033 50%, #05000a 100%); overflow: hidden; }
+        #viewport-wrapper { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #000000 0%, #111111 50%, #000000 100%); overflow: hidden; }
         #app-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; position: relative; }
         .container { width: 90vw !important; max-width: 400px !important; height: 80vh !important; max-height: 650px !important; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
         .main-panel { width: 100% !important; height: 100% !important; display: flex !important; flex-direction: column; overflow: hidden; }
@@ -27,15 +27,15 @@
         #login-view, #panel-view { width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: none; align-items: center; justify-content: center; }
         #login-view { display: flex; z-index: 9999; }
         #panel-view.active { display: flex; }
-        .login-container { background: rgba(5, 0, 10, 0.9); padding: 40px; border-radius: 24px; border: 2px solid var(--primary-color); box-shadow: 0 0 30px rgba(138, 43, 226, 0.4); width: 90%; max-width: 350px; text-align: center; backdrop-filter: blur(10px); }
-        input.login-input { width: 100%; padding: 12px 15px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(138, 43, 226, 0.3); border-radius: 12px; color: var(--text-color); font-size: 14px; outline: none; text-align: center; }
+        .login-container { background: rgba(5, 0, 10, 0.9); padding: 40px; border-radius: 24px; border: 2px solid var(--primary-color); box-shadow: 0 0 30px rgba(160, 160, 160, 0.4); width: 90%; max-width: 350px; text-align: center; backdrop-filter: blur(10px); }
+        input.login-input { width: 100%; padding: 12px 15px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(160, 160, 160, 0.3); border-radius: 12px; color: var(--text-color); font-size: 14px; outline: none; text-align: center; }
         .btn-login { width: 100%; padding: 12px; background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%); border: none; border-radius: 12px; color: white; font-weight: 700; text-transform: uppercase; cursor: pointer; }
-        .error-msg { color: #ff4444; font-size: 12px; margin-top: 10px; display: none; }
+        .error-msg { color: #c0c0c0; font-size: 12px; margin-top: 10px; display: none; }
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); display: flex; align-items: center; justify-content: center; z-index: 10000; backdrop-filter: blur(5px); }
-        .modal-content { background: #05000a; padding: 30px; border-radius: 20px; border: 2px solid var(--primary-color); text-align: center; width: 90%; max-width: 300px; }
-        .btn-adquirir { background: #8A2BE2; color: white; padding: 10px; border-radius: 10px; display: block; margin-bottom: 10px; text-decoration: none; font-weight: bold; }
+        .modal-content { background: #000000; padding: 30px; border-radius: 20px; border: 2px solid var(--primary-color); text-align: center; width: 90%; max-width: 300px; }
+        .btn-adquirir { background: #808080; color: white; padding: 10px; border-radius: 10px; display: block; margin-bottom: 10px; text-decoration: none; font-weight: bold; }
         .btn-ok { background: transparent; color: var(--primary-light); border: 1px solid var(--primary-color); padding: 10px; border-radius: 10px; width: 100%; cursor: pointer; }
-        .hz-slider-container { margin-top: 10px; padding: 10px; background: rgba(0, 0, 0, 0.2); border-radius: 10px; border: 1px solid rgba(138, 43, 226, 0.2); }
+        .hz-slider-container { margin-top: 10px; padding: 10px; background: rgba(0, 0, 0, 0.2); border-radius: 10px; border: 1px solid rgba(160, 160, 160, 0.2); }
         .hz-range-slider { -webkit-appearance: none; width: 100%; height: 6px; background: #333; border-radius: 5px; outline: none; }
         .hz-range-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; background: var(--system-green); cursor: pointer; border-radius: 50%; box-shadow: 0 0 10px var(--system-green); }
         .hz-labels { display: flex; justify-content: space-between; margin-top: 5px; color: var(--system-green); font-size: 10px; font-family: monospace; font-weight: bold; }

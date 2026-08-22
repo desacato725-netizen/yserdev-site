@@ -7,25 +7,25 @@
 }
 
 :root {
-    --primary-color: #8A2BE2; /* BlueViolet */
-    --primary-dark: #1a0033;
-    --primary-light: #BF00FF; /* Electric Purple */
-    --bg-dark: #05000a;
-    --bg-panel: #1a0033;
-    --bg-hover: #330066;
+    --primary-color: #808080; /* BlueViolet */
+    --primary-dark: #111111;
+    --primary-light: #f0f0f0; /* Electric Purple */
+    --bg-dark: #000000;
+    --bg-panel: #111111;
+    --bg-hover: #2a2a2a;
     --text-primary: #ffffff;
-    --text-secondary: #e0ccff;
-    --border-color: rgba(138, 43, 226, 0.4);
-    --error-color: #ff4488;
-    --success-color: #44ff88;
-    --accent-hover: #8A2BE2;
+    --text-secondary: #d0d0d0;
+    --border-color: rgba(160, 160, 160, 0.4);
+    --error-color: #b0b0b0;
+    --success-color: #c0c0c0;
+    --accent-hover: #808080;
     --toggle-off: #1a1a1a;
-    --bg-option: rgba(138, 43, 226, 0.1);
+    --bg-option: rgba(160, 160, 160, 0.1);
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #05000a 0%, #1a0033 50%, #05000a 100%);
+    background: linear-gradient(135deg, #000000 0%, #111111 50%, #000000 100%);
     color: var(--text-primary);
     min-height: 100vh;
     display: flex;
@@ -46,13 +46,13 @@ body {
 
 /* Main Panel */
 .main-panel.v2-panel {
-    background: linear-gradient(145deg, #1a0033 0%, #05000a 100%);
+    background: linear-gradient(145deg, #111111 0%, #000000 100%);
     border: 1px solid var(--primary-color);
     border-radius: 24px;
     width: 100%;
     max-width: 800px;
     height: 480px;
-    box-shadow: 0 0 40px rgba(138, 43, 226, 0.2);
+    box-shadow: 0 0 40px rgba(160, 160, 160, 0.2);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -74,8 +74,8 @@ body {
     width: 200px;
     min-width: 200px;
     padding: 15px;
-    background: rgba(26, 0, 51, 0.9);
-    border-right: 1px solid rgba(138, 43, 226, 0.15);
+    background: rgba(24, 24, 24, 0.9);
+    border-right: 1px solid rgba(160, 160, 160, 0.15);
     gap: 8px;
     overflow-y: auto;
 }
@@ -88,7 +88,7 @@ body {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 12px;
-    color: #e0ccff;
+    color: #d0d0d0;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 14px;
@@ -99,7 +99,7 @@ body {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(160, 160, 160, 0.3);
 }
 
 .nav-icon {
@@ -128,8 +128,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 25px;
-    background: rgba(138, 43, 226, 0.1);
-    border-bottom: 1px solid rgba(138, 43, 226, 0.1);
+    background: rgba(160, 160, 160, 0.1);
+    border-bottom: 1px solid rgba(160, 160, 160, 0.1);
 }
 
 .header-content { display: flex; align-items: center; gap: 18px; }
@@ -137,7 +137,7 @@ body {
 .header-icon-new {
     width: 48px; height: 48px;
     display: flex; align-items: center; justify-content: center;
-    background: rgba(138, 43, 226, 0.4);
+    background: rgba(160, 160, 160, 0.4);
     border: 1px solid var(--primary-color);
     border-radius: 14px; color: var(--primary-color);
 }
@@ -157,7 +157,7 @@ body {
     width: 40px; height: 40px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px; color: #e0ccff; cursor: pointer;
+    border-radius: 12px; color: #d0d0d0; cursor: pointer;
 }
 
 .content-area-new {
@@ -170,7 +170,7 @@ body {
 .panel-footer-internal {
     padding: 15px;
     background: rgba(0, 0, 0, 0.2);
-    border-top: 1px solid rgba(138, 43, 226, 0.05);
+    border-top: 1px solid rgba(160, 160, 160, 0.05);
     text-align: center;
 }
 
@@ -192,8 +192,8 @@ body {
 }
 
 .option-item:hover {
-    background: rgba(138, 43, 226, 0.15);
-    border-color: rgba(138, 43, 226, 0.2);
+    background: rgba(160, 160, 160, 0.15);
+    border-color: rgba(160, 160, 160, 0.2);
 }
 
 .option-info {
@@ -239,14 +239,14 @@ body {
 
 input:checked + .slider { 
     background-color: var(--primary-color); 
-    box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+    box-shadow: 0 0 20px rgba(160, 160, 160, 0.8);
     transform: scale(1.15);
 }
 
 @keyframes pulse-active {
-    0% { box-shadow: 0 0 10px rgba(138, 43, 226, 0.6); }
-    50% { box-shadow: 0 0 20px rgba(138, 43, 226, 0.9); }
-    100% { box-shadow: 0 0 10px rgba(138, 43, 226, 0.6); }
+    0% { box-shadow: 0 0 10px rgba(160, 160, 160, 0.6); }
+    50% { box-shadow: 0 0 20px rgba(160, 160, 160, 0.9); }
+    100% { box-shadow: 0 0 10px rgba(160, 160, 160, 0.6); }
 }
 
 input:checked + .slider {
@@ -255,9 +255,9 @@ input:checked + .slider {
 
 /* --- ANIMAÇÃO DE RESPIRAÇÃO NOS BOTÕES DE INJEÇÃO --- */
 @keyframes breathe-btn {
-    0% { transform: scale(1); box-shadow: 0 0 10px rgba(138, 43, 226, 0.2); }
-    50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(138, 43, 226, 0.4); }
-    100% { transform: scale(1); box-shadow: 0 0 10px rgba(138, 43, 226, 0.2); }
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(160, 160, 160, 0.2); }
+    50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(160, 160, 160, 0.4); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(160, 160, 160, 0.2); }
 }
 
 .injection-buttons { display: flex; flex-direction: column; gap: 10px; }
@@ -270,15 +270,15 @@ input:checked + .slider {
 
 .btn-inject:hover { 
     transform: translateY(-3px) scale(1.05); 
-    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.5);
+    box-shadow: 0 8px 25px rgba(160, 160, 160, 0.5);
     animation: none;
 }
 
 .injection-log {
     width: 100%; height: 100px; background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(138, 43, 226, 0.1);
+    border: 1px solid rgba(160, 160, 160, 0.1);
     border-radius: 10px;
-    padding: 10px; color: #e0ccff; font-size: 11px; resize: none;
+    padding: 10px; color: #d0d0d0; font-size: 11px; resize: none;
 }
 
 /* --- Ajustes Mobile --- */
@@ -330,20 +330,20 @@ input:checked + .slider {
     appearance: none;
     width: 18px;
     height: 18px;
-    background: #8A2BE2;
+    background: #808080;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+    box-shadow: 0 0 10px rgba(160, 160, 160, 0.5);
     transition: all 0.3s ease;
 }
 
 .range-slider::-webkit-slider-thumb:hover {
     transform: scale(1.2);
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+    box-shadow: 0 0 15px rgba(160, 160, 160, 0.8);
 }
 
 .slider-value {
-    color: #e0ccff;
+    color: #d0d0d0;
     font-weight: 600;
     min-width: 25px;
     text-align: center;
@@ -351,7 +351,7 @@ input:checked + .slider {
 
 .fov-item {
     margin-top: 25px !important;
-    border-top: 1px solid rgba(138, 43, 226, 0.05);
+    border-top: 1px solid rgba(160, 160, 160, 0.05);
     padding-top: 15px !important;
 }
 
