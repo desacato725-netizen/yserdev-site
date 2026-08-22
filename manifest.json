@@ -1,0 +1,16 @@
+{
+  "name": "Shein",
+  "short_name": "Shein",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2a0018",
+  "theme_color": "#a0125c",
+  "icons": [
+    {
+      "src": "icons/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
