@@ -1,4 +1,4 @@
-# yserdev site
+# bypass
 
 Frontend estático preparado a partir dos arquivos públicos fornecidos pelo projeto.
 
